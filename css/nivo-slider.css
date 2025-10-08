@@ -1,37 +1,34 @@
 /*
  * jQuery Nivo Slider v3.2
  * http://nivo.dev7studios.com
- *
- * Copyright 2012, Dev7studios
- * Free to use and abuse under the MIT license.
- * http://www.opensource.org/licenses/mit-license.php
+ * MIT License
  */
- 
-/* The Nivo Slider styles */
 
+/* Основной контейнер слайдера */
 .nivoSlider {
 	position: relative;
 	height: auto;
 	overflow: hidden;
 }
+
 .nivoSlider img {
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	max-width: none;
 }
+
 .nivo-main-image {
 	display: block !important;
-	position: relative !important; 
+	position: relative !important;
 	width: 100% !important;
 }
 
-/* If an image is wrapped in a link */
-
+/* Изображения, обернутые в ссылку */
 .nivoSlider a.nivo-imageLink {
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	width: 100%;
 	height: 100%;
 	border: 0;
@@ -39,12 +36,11 @@
 	margin: 0;
 	z-index: 6;
 	display: none;
-	background: white; 
-	filter:alpha(opacity=0); 
+	background: #fff;
 	opacity: 0;
 }
 
-/* The slices and boxes in the Slider */
+/* Срезы и блоки */
 .nivo-slice {
 	display: block;
 	position: absolute;
@@ -60,13 +56,15 @@
 	overflow: hidden;
 }
 
-.nivo-box img { display:block; }
+.nivo-box img {
+	display: block;
+}
 
-/* Caption styles */
+/* Подписи */
 .nivo-caption {
 	position: absolute;
-	left: 0px;
-	bottom: 0px;
+	left: 0;
+	bottom: 0;
 	background: #000;
 	color: #fff;
 	width: 100%;
@@ -75,12 +73,9 @@
 	opacity: 0.8;
 	overflow: hidden;
 	display: none;
-	-moz-opacity: 0.8;
-	filter:alpha(opacity=8);
-	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
-	box-sizing: border-box;         /* Opera/IE 8+ */
+	box-sizing: border-box;
 }
+
 .nivo-caption p {
 	padding: 5px;
 	margin: 0;
@@ -88,35 +83,46 @@
 
 .nivo-caption a {
 	display: inline !important;
+	color: #fff;
+	text-decoration: underline;
 }
 
 .nivo-html-caption {
-    display: none;
+	display: none;
 }
 
-/* Direction nav styles (e.g. Next & Prev) */
-
+/* Кнопки навигации (влево/вправо) */
 .nivo-directionNav a {
 	position: absolute;
 	top: 40%;
 	z-index: 9;
 	cursor: pointer;
 }
+
 .nivo-prevNav {
-	left: 0px;
+	left: 0;
 }
+
 .nivo-nextNav {
-	right: 0px;
+	right: 0;
 }
 
-/* Control nav styles (e.g. 1,2,3...) */
-
+/* Навигация по точкам */
 .nivo-controlNav {
 	text-align: center;
+	margin-top: 10px;
 }
+
 .nivo-controlNav a {
 	cursor: pointer;
+	display: inline-block;
+	width: 14px;
+	height: 14px;
+	margin: 0 5px;
+	background: #ccc;
+	border-radius: 50%;
 }
+
 .nivo-controlNav a.active {
-	font-weight: bold;
+	background: #333;
 }
