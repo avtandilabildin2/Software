@@ -1,0 +1,104 @@
+/* Accordion container */
+.st-accordion {
+	width: 940px;
+	margin: 0 auto;
+	font-family: "Segoe UI", Arial, sans-serif;
+	border: 1px solid #ddd;
+	border-radius: 12px;
+	background: #fafafa;
+	box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Accordion items */
+.st-accordion ul {
+	padding: 0;
+	margin: 0;
+}
+
+.st-accordion ul li {
+	border-bottom: 1px solid #ddd;
+	list-style-type: none;
+	overflow: hidden;
+	transition: background 0.3s ease-in-out;
+}
+
+.st-accordion ul li:last-child {
+	border-bottom: none;
+}
+
+/* Accordion titles */
+.st-accordion ul li > a {
+	font-size: 1.3em;
+	display: block;
+	position: relative;
+	line-height: 2.5em;
+	text-decoration: none;
+	color: #3a4b5c;
+	text-align: center;
+	padding: 10px;
+	transition: color 0.3s ease, background 0.3s ease;
+	cursor: pointer;
+}
+
+/* Hover and active colors */
+.st-accordion ul li > a:hover {
+	color: #1693eb;
+	background: #e6f2fb;
+}
+
+/* Down arrow */
+.st-accordion ul li > a span {
+	content: "";
+	background: url("https://cdn-icons-png.flaticon.com/512/32/32195.png") no-repeat center;
+	background-size: 16px;
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	transform: translateY(-50%);
+	transition: transform 0.3s ease;
+	opacity: 0.6;
+}
+
+/* Open state */
+.st-accordion ul li.st-open > a {
+	color: #1693eb;
+	background: #e6f2fb;
+}
+
+.st-accordion ul li.st-open > a span {
+	transform: translateY(-50%) rotate(180deg);
+	opacity: 1;
+}
+
+/* Accordion content */
+.st-content {
+	padding: 0 20px 15px;
+	color: #333;
+	line-height: 1.6em;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease;
+}
+
+.st-accordion ul li.st-open .st-content {
+	max-height: 200px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+	.st-accordion {
+		width: 95%;
+	}
+
+	.st-accordion ul li > a {
+		font-size: 1.1em;
+		text-align: left;
+		padding-left: 20px;
+	}
+
+	.st-accordion ul li > a span {
+		right: 20px;
+	}
+}
