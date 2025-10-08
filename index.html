@@ -4,188 +4,292 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="google-site-verification" content="lW7mBidUvlnn49dDaxeuASOO66bra2W4bRnbDgMtpFI" />
-
+    <meta name="description" content="Computer Science Department at Ala-Too International University" />
     <title>Computer Science | AIU</title>
 
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="css/text.css" />
-    <link rel="stylesheet" href="css/960.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/nivo-slider.css" />
-    <link rel="stylesheet" href="css/nivo-theme.css" />
+        body {
+            font-family: Arial, sans-serif;
+            background: #f8f8f8;
+            color: #333;
+        }
+
+        header {
+            background: #004080;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        header #logo img {
+            max-height: 60px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+        }
+
+        nav ul li a,
+        nav ul li button {
+            display: block;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border: none;
+            background: none;
+            cursor: pointer;
+        }
+
+        nav ul li ul.dropdown {
+            display: none;
+            position: absolute;
+            background: #0066cc;
+            top: 100%;
+            left: 0;
+            min-width: 180px;
+            z-index: 999;
+        }
+
+        nav ul li ul.dropdown li a {
+            padding: 10px;
+            color: white;
+        }
+
+        nav ul li:hover > ul.dropdown {
+            display: block;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        .intro {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .intro article {
+            flex: 1 1 400px;
+        }
+
+        .intro .slider-wrapper {
+            flex: 1 1 400px;
+        }
+
+        .slider-wrapper img {
+            width: 100%;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .mission {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .mission .box {
+            flex: 1 1 250px;
+            background: white;
+            padding: 15px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #0066cc;
+            color: white;
+            padding: 8px 15px;
+            text-decoration: none;
+            margin-top: 10px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .intro {
+                flex-direction: column;
+            }
+            .mission {
+                flex-direction: column;
+            }
+            nav ul {
+                flex-direction: column;
+            }
+            nav ul li ul.dropdown {
+                position: relative;
+            }
+        }
+    </style>
 </head>
-
 <body>
 <div id="container">
+
     <!-- HEADER -->
-    <header id="header-wrap">
-        <div id="header" class="container_16">
-            <div id="logo" class="grid_5">
-                <img src="images/logo.png" alt="Computer Science Department" />
-            </div>
-
-            <!-- Navigation -->
-            <nav id="nav" class="grid_11">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-
-                    <li>
-                        <a href="#">Department</a>
-                        <ul id="department">
-                            <li><a href="department/news.html">News</a></li>
-                            <li><a href="department/developments.html">Developments</a></li>
-                            <li><a href="http://ic.iaau.edu.kg" target="_blank">Exchange Programs</a></li>
-                            <li><a href="department/prospective-students.html">Prospective Students</a></li>
-                            <li><a href="department/alumni.html">Alumni</a></li>
-                            <li><a href="department/contact-us.html">Contact Us</a></li>
-                            <li><a href="department/info.html">Info</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Bachelor Program</a>
-                        <ul id="program">
-                            <li><a href="program/courses.html">Courses</a></li>
-                            <li><a href="program/research.html">Research</a></li>
-                            <li><a href="program/degree-guide.html">Degree Guide</a></li>
-                            <li><a href="program/recent-diplomas.html">Recent Diplomas</a></li>
-                            <li><a href="program/exam_rules.html">Exam Rules</a></li>
-                            <li><a href="program/admission.html">Admission</a></li>
-                            <li><a href="program/faq.html">FAQ</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Master Degree</a>
-                        <ul id="master">
-                            <li><a href="grad/overview.html">Overview</a></li>
-                            <li><a href="grad/grad-courses.html">Program</a></li>
-                            <li><a href="grad/grad-research.html">Graduate Research</a></li>
-                            <li><a href="grad/grad-admission.html">Admission</a></li>
-                        </ul>
-                    </li>
-
-                    <li>
-                        <a href="#">Calendar</a>
-                        <ul id="calendar">
-                            <li><a href="http://iaau.edu.kg/view/public/pages/page.xhtml?id=281" target="_blank">Academic Calendar</a></li>
-                            <li><a href="calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
-                            <li><a href="calendar/midterms.html">Midterms Schedule</a></li>
-                            <li><a href="calendar/finals.html">Finals Schedule</a></li>
-                            <li><a href="calendar/labs.html">Labs Schedule</a></li>
-                        </ul>
-                    </li>
-
-                    <li><a href="faculty/faculty.html">Faculty</a></li>
-
-                    <li>
-                        <a href="labs/labs.html">Labs</a>
-                        <ul id="labs">
-                            <li><a href="http://its.iaau.edu.kg/policies/lab-rules.html" target="_blank">Policy &amp; Regulations</a></li>
-                            <li><a href="labs/software.html">Software</a></li>
-                            <li><a href="department/contact-us.html">Contacts</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </nav>
+    <header>
+        <div id="logo">
+            <a href="index.html"><img src="images/logo.png" alt="Computer Science Department" /></a>
         </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li>
+                    <button class="dropbtn">Department</button>
+                    <ul class="dropdown">
+                        <li><a href="department/news.html">News</a></li>
+                        <li><a href="department/developments.html">Developments</a></li>
+                        <li><a href="http://ic.iaau.edu.kg" target="_blank" rel="noopener noreferrer">Exchange Programs</a></li>
+                        <li><a href="department/prospective-students.html">Prospective Students</a></li>
+                        <li><a href="department/alumni.html">Alumni</a></li>
+                        <li><a href="department/contact-us.html">Contact Us</a></li>
+                        <li><a href="department/info.html">Info</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="dropbtn">Bachelor Program</button>
+                    <ul class="dropdown">
+                        <li><a href="program/courses.html">Courses</a></li>
+                        <li><a href="program/research.html">Research</a></li>
+                        <li><a href="program/degree-guide.html">Degree Guide</a></li>
+                        <li><a href="program/recent-diplomas.html">Recent Diplomas</a></li>
+                        <li><a href="program/exam_rules.html">Exam Rules</a></li>
+                        <li><a href="program/admission.html">Admission</a></li>
+                        <li><a href="program/faq.html">FAQ</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="dropbtn">Master Degree</button>
+                    <ul class="dropdown">
+                        <li><a href="grad/overview.html">Overview</a></li>
+                        <li><a href="grad/grad-courses.html">Program</a></li>
+                        <li><a href="grad/grad-research.html">Graduate Research</a></li>
+                        <li><a href="grad/grad-admission.html">Admission</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <button class="dropbtn">Calendar</button>
+                    <ul class="dropdown">
+                        <li><a href="http://iaau.edu.kg/view/public/pages/page.xhtml?id=281" target="_blank" rel="noopener noreferrer">Academic Calendar</a></li>
+                        <li><a href="calendar/schedule-of-lectures.html">Schedule of Lectures</a></li>
+                        <li><a href="calendar/midterms.html">Midterms Schedule</a></li>
+                        <li><a href="calendar/finals.html">Finals Schedule</a></li>
+                        <li><a href="calendar/labs.html">Labs Schedule</a></li>
+                    </ul>
+                </li>
+                <li><a href="faculty/faculty.html">Faculty</a></li>
+                <li>
+                    <button class="dropbtn">Labs</button>
+                    <ul class="dropdown">
+                        <li><a href="http://its.iaau.edu.kg/policies/lab-rules.html" target="_blank">Policy & Regulations</a></li>
+                        <li><a href="labs/software.html">Software</a></li>
+                        <li><a href="department/contact-us.html">Contacts</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- CONTENT -->
-    <main id="wrap-content">
-        <div id="content" class="container_16">
-            <section id="left-content">
-                <article class="grid_8 m-bottom m-top">
-                    <h3 class="m-bottom page-heading">What is Computer Science?</h3>
+    <!-- MAIN CONTENT -->
+    <main>
+        <section class="intro">
+            <article>
+                <h1>What is Computer Science?</h1>
+                <p>
+                    Computers and the Internet are having a great impact on human life and society.
+                    Our lives, starting in the second half of the twentieth century, have become computerized
+                    "at the speed of light." We now live in times referred to as the computer age,
+                    the information age, or the Internet age. The Computer Engineering Department offers a
+                    unique opportunity for bright young minds to excel in the areas of computer science,
+                    computer software, and computer hardware.
+                </p>
+                <a href="department/info.html" class="btn">Learn More &raquo;</a>
+            </article>
 
-                    <p class="main">
-                        Computers and the Internet are having a great impact on human life and society.
-                        Our lives, starting in the second half of the twentieth century, have become computerized
-                        "at the speed of light." We now live in times referred to as the computer age,
-                        the information age, or the Internet age. The Computer Engineering Department offers a
-                        unique opportunity for bright young minds to excel in the areas of computer science,
-                        computer software, and computer hardware.
-                    </p>
+            <div class="slider-wrapper">
+                <img src="images/slider/slide1.jpg" alt="Welcome to Computer Science Department" />
+                <img src="images/slider/slide2.jpg" alt="CS Students" />
+                <img src="images/slider/slide3.jpg" alt="AIU Computer Labs" />
+            </div>
+        </section>
 
-                    <a href="department/info.html" class="more-link f-right">Learn More &raquo;</a>
-                </article>
-
-                <div id="wrap-slider" class="grid_8 theme-effe">
-                    <div id="slider" class="nivoSlider">
-                        <a href="#"><img src="images/slider/slide1.jpg" alt="Welcome to Computer Science Department" title="Welcome to Computer Science Department" /></a>
-                        <a href="#"><img src="images/slider/slide2.jpg" alt="CS Students" /></a>
-                        <a href="#"><img src="images/slider/slide3.jpg" alt="AIU Computer Labs" /></a>
-                    </div>
-                </div>
-
-                <section id="mission" class="container_12 m-top f-left">
-                    <div class="grid_4 m-bottom">
-                        <h4>Our Vision</h4>
-                        <ul>
-                            <li>To develop research projects that receive international recognition</li>
-                            <li>To engage our students in projects that help them find jobs worldwide</li>
-                        </ul>
-                    </div>
-
-                    <div class="grid_4 m-bottom">
-                        <h4>Our Mission</h4>
-                        <ul>
-                            <li>To educate students with state-of-the-art computer engineering knowledge</li>
-                            <li>To provide a strong background enabling global career opportunities</li>
-                            <li>To instill high moral and ethical values</li>
-                            <li>To promote leadership through social activities</li>
-                        </ul>
-                    </div>
-
-                    <div class="grid_4 m-bottom">
-                        <h4>Our Merits and Principles</h4>
-                        <ul>
-                            <li>Excellence in teaching and research</li>
-                            <li>Loyalty to ethical standards</li>
-                            <li>Professional and dedicated work habits</li>
-                            <li>Responsiveness to technological changes</li>
-                        </ul>
-                    </div>
-                </section>
-            </section>
-        </div>
+        <section class="mission">
+            <div class="box">
+                <h2>Our Vision</h2>
+                <ul>
+                    <li>To develop research projects that receive international recognition</li>
+                    <li>To engage our students in projects that help them find jobs worldwide</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Our Mission</h2>
+                <ul>
+                    <li>To educate students with state-of-the-art computer engineering knowledge</li>
+                    <li>To provide a strong background enabling global career opportunities</li>
+                    <li>To instill high moral and ethical values</li>
+                    <li>To promote leadership through social activities</li>
+                </ul>
+            </div>
+            <div class="box">
+                <h2>Our Merits and Principles</h2>
+                <ul>
+                    <li>Excellence in teaching and research</li>
+                    <li>Loyalty to ethical standards</li>
+                    <li>Professional and dedicated work habits</li>
+                    <li>Responsiveness to technological changes</li>
+                </ul>
+            </div>
+        </section>
     </main>
 
     <!-- FOOTER -->
-    <footer id="footer-wrap">
-        <div id="footer" class="container_12">
-            <p class="f-left">&copy; 2017 Computer Science Department</p>
-            <p class="f-right">Ala-Too International University</p>
-        </div>
+    <footer>
+        <p>&copy; 2025 Computer Science Department | Ala-Too International University</p>
     </footer>
+
 </div>
 
-<!-- Scripts -->
-<script src="js/jquery-1.9.1.min.js"></script>
-<script src="js/jquery.nivo.slider.js"></script>
-<script src="js/highlight.js"></script>
-
+<!-- JS -->
 <script>
-    $(window).on("load", function () {
-        $("#slider").nivoSlider();
+    // Dropdown menu toggle
+    document.querySelectorAll('.dropbtn').forEach(button => {
+        button.addEventListener('click', () => {
+            const dropdown = button.nextElementSibling;
+            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+        });
     });
-</script>
 
-<!-- Google Analytics -->
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-<script>
-    window.ga =
-        window.ga ||
-        function () {
-            (ga.q = ga.q || []).push(arguments);
-        };
-    ga.l = +new Date();
-    ga("create", "UA-46202546-1", "auto");
-    ga("send", "pageview");
+    // Simple slider
+    const slides = document.querySelectorAll('.slider-wrapper img');
+    let currentSlide = 0;
+    slides.forEach((img, i) => (i !== 0 ? img.style.display = 'none' : img.style.display = 'block'));
+
+    setInterval(() => {
+        slides[currentSlide].style.display = 'none';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].style.display = 'block';
+    }, 5000);
 </script>
 </body>
 </html>
