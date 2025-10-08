@@ -1,72 +1,104 @@
+/* ===== Theme: Effe (оптимизированная версия) ===== */
 
 .theme-effe .nivoSlider {
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	max-width: 450px;
-	background: #fff url(../images/loading.gif) no-repeat 50% 50%;
+	background: #fff url("../images/loading.gif") no-repeat 50% 50%;
 	position: relative;
+	overflow: hidden;
+	border-radius: 8px;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 }
 
+/* Подписи (caption) */
 .theme-effe .nivo-caption {
-	font-size: 1.4em;
+	font-size: 1.2em;
 	height: auto;
 	text-shadow: none;
+	background: rgba(0, 0, 0, 0.6);
+	padding: 8px 12px;
+	color: #fff;
+	box-sizing: border-box;
 }
 
+/* Изображения */
 .theme-effe .nivoSlider img {
 	position: absolute;
-	top: 0px;
-	left: 0px;
+	top: 0;
+	left: 0;
 	display: none;
+	width: 100%;
+	height: auto;
+	object-fit: cover;
 }
+
 .theme-effe .nivoSlider a {
 	border: 0;
 	display: block;
 }
 
+/* Навигация точками (controlNav) */
 .theme-effe .nivo-controlNav {
-	padding: 5px;
+	padding: 6px;
 	position: relative;
-	bottom: 0px;
-	right: 0px;
+	bottom: 0;
+	text-align: center;
 	z-index: 50;
 }
 
 .theme-effe .nivo-controlNav a {
 	background: #ccc;
-	border-radius: 6px;
+	border-radius: 50%;
 	display: inline-block;
 	width: 12px;
 	height: 12px;
 	text-indent: -9999px;
-	border: 0;
-	margin-right: 3px;
+	border: none;
+	margin: 0 3px;
+	transition: background 0.3s ease;
+}
+
+.theme-effe .nivo-controlNav a:hover {
+	background: #6b86c4;
 }
 
 .theme-effe .nivo-controlNav a.active {
 	background: #38558d;
 }
 
+/* Кнопки навигации (стрелки) */
 .theme-effe .nivo-directionNav a {
 	display: block;
 	width: 35px;
 	height: 35px;
-	background: url('../images/arrows.png') no-repeat;
+	background: url("../images/arrows.png") no-repeat;
 	text-indent: -9999px;
-	border: 0;
+	border: none;
 	visibility: hidden;
-	background-position: -35px 0px;
-}
-
-.theme-effe a.nivo-nextNav {
-	right: 5px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: opacity 0.3s ease;
+	opacity: 0;
 }
 
 .theme-effe a.nivo-prevNav {
 	left: 5px;
-	background-position: 0px 0px;
+	background-position: 0 0;
 }
 
+.theme-effe a.nivo-nextNav {
+	right: 5px;
+	background-position: -35px 0;
+}
+
+/* Показывать стрелки при наведении */
 .theme-effe .nivoSlider:hover .nivo-directionNav a {
 	visibility: visible;
+	opacity: 1;
+}
+
+/* ===== Дополнительно ===== */
+.theme-effe .nivoSlider:hover .nivo-caption {
+	background: rgba(0, 0, 0, 0.75);
 }
