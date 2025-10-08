@@ -1,15 +1,35 @@
-#news_img,#news_text{
-	float:left;
+/* ========================
+   NEWS SECTION
+======================== */
+#news_img,
+#news_text {
+	float: left;
 }
-#news_text b{
-	font-size:12px;
-	color:#126493;
+
+#news_img {
+	max-width: 100%;
+	height: auto;
 }
-#news_text{
-	padding: 50px 0px 0px 30px;
+
+#news_text {
+	padding: 50px 0 0 30px;
 }
-.news_header{
-	color:#126493;
-	font-size:16px;
-	font-weight:bold;
+
+#news_text b {
+	font-size: 12px;
+	color: #126493;
+}
+
+.news_header {
+	color: #126493;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+/* Optional hover effect */
+.news_header:hover {
+	color: #0f4f73;
+	cursor: default;
+	transition: color 0.3s;
 }
