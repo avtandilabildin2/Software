@@ -1,89 +1,74 @@
+/* ========================
+   BASE STYLES
+======================== */
 body {
 	font: 10px/1.5 'Droid Sans', Arial, 'Liberation Sans', FreeSans, sans-serif;
 	color: #000;
+	background-color: #fff;
+	margin: 0;
+	padding: 0;
 }
 
+/* ========================
+   CODE & PRE
+======================== */
 pre,
 code {
 	font-family: 'DejaVu Sans Mono', Menlo, Consolas, monospace;
 }
 
-/* `Headings
-----------------------------------------------------------------------------------------------------*/
+/* ========================
+   HEADINGS
+======================== */
+h1 { font-size: 2.3em; }
+h2 { font-size: 2.1em; }
+h3 { font-size: 1.9em; }
+h4 { font-size: 1.7em; }
+h5 { font-size: 1.5em; }
+h6 { font-size: 1.3em; }
 
-h1 {
-	font-size: 2.3em;
-}
-
-h2 {
-	font-size: 2.1em;
-}
-
-h3 {
-	font-size: 1.9em;
-}
-
-h4 {
-	font-size: 1.7em;
-}
-
-h5 {
-	font-size: 1.5em;
-}
-
-h6 {
-	font-size: 1.3em;
-}
-
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
+	margin: 0.5em 0;
+	color: #111;
 }
 
-/* `Spacing
-----------------------------------------------------------------------------------------------------*/
+/* ========================
+   LISTS
+======================== */
+ol { list-style: decimal inside; }
+ul { list-style: disc inside; }
+li { list-style-type: none; }
 
-ol {
-	list-style: decimal;
-}
-
-ul {
-	list-style: disc;
-}
-
-li {
-	list-style-type: none;
-	
-}
-/*
-changed by Myktybek font-words
---------------------------------------------------------------*/
-
-#fon_text{
-	
+/* ========================
+   CUSTOM TEXT STYLES
+   (changed by Myktybek)
+======================== */
+#fon_text {
 	font-size: 17px;
-	
 	text-align: left;
-	
-	color: black;
-	
+	color: #000;
 	font-family: cursive;
-
-	text-decoration:underline;
-
+	text-decoration: underline;
+	margin-bottom: 10px;
 }
-#in_tab{
 
-	color: black;
-	
+#in_tab {
+	color: #000;
 	font-size: 13px;
-	
-	
-
 }
-#in_tab2{
-	
-	color: blue;
-	
-	font-size:11px;
 
+#in_tab2 {
+	color: #0056cc;
+	font-size: 11px;
+}
+
+/* Optional: smooth link transitions */
+a {
+	transition: color 0.3s ease;
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
 }
