@@ -1,98 +1,98 @@
-/**
- * Created with JetBrains RubyMine.
- * User: Nurlan
- * Date: 8/14/13
- * Time: 1:08 AM
- * To change this template use File | Settings | File Templates.
- */
+$(function () {
 
-/**
- * В этом файле описан функционал, который добавляет панель в левую часть сайта, которая позволяет промотать экран вверх.
- */
+    let lastScrollPosition = 0;
+    let showButton = false;
+    const closeButtonHTML = g_is_guest
+        ? '<div class="close_panel" title="Убрать панель прокрутки"><span class="close dotted">убрать</span></div>'
+        : '';
 
+    // Создаем кнопку "Наверх"
+    const toTopButton = $(`
+        <div class="to_top">
+            <div class="to_top_panel">
+                <div class="to_top_button" title="Наверх">
+                    <span class="arrow">&uarr;</span> 
+                    <span class="label">наверх</span>
+                </div>
+                ${closeButtonHTML}
+            </div>
+        </div>
+    `);
 
-$(function() {
+    $('body').append(toTopButton);
 
-    window.last_scroll_position = 0;
+    const $panel = $('.to_top_panel', toTopButton);
+    const $arrow = $('.to_top_button .arrow', toTopButton);
+    const $label = $('.to_top_button .label', toTopButton);
 
-    var show = false
-    var close_button = g_is_guest ? '<div class="close_panel" title="Убрать панель прокрутки"><span class="close dotted">убрать</span></div>' : ''
-
-    //console.log( g_is_guest , close_button)
-
-    var to_top_button = $('<div class="to_top" ><div class="to_top_panel" ><div class="to_top_button" title="Наверх"><span class="arrow">&uarr;</span> <span class="label">наверх</span></div>  '+ close_button +'</div></div>')
-
-    $('body').append(to_top_button);
-
-    // наверх
-    $('.to_top_panel', to_top_button).click(function(){
-        if(to_top_button.hasClass('has_position')){
-            to_top_button.removeClass('has_position');
-            $('.to_top_button .arrow', to_top_button).html('&uarr;');
-            $('.to_top_button .label', to_top_button).html('наверх');
-            $.scrollTo( window.last_scroll_position , 100,  { axis: 'y' } );
-            window.last_scroll_position = 0;
-        }else{
-            to_top_button.addClass('has_position');
-            $('.to_top_button .arrow', to_top_button).html('&darr;');
-            $('.to_top_button .label', to_top_button).html('вниз');
-            window.last_scroll_position = window.pageYOffset;
-            $.scrollTo( $('body') , 100,  { axis: 'y' } );
+    // Обработка клика по кнопке "Наверх"/"Вниз"
+    $panel.on('click', function () {
+        if (toTopButton.hasClass('has_position')) {
+            toTopButton.removeClass('has_position');
+            $arrow.html('&uarr;');
+            $label.text('наверх');
+            $.scrollTo(lastScrollPosition, 100, { axis: 'y' });
+            lastScrollPosition = 0;
+        } else {
+            toTopButton.addClass('has_position');
+            $arrow.html('&darr;');
+            $label.text('вниз');
+            lastScrollPosition = window.pageYOffset;
+            $.scrollTo($('body'), 100, { axis: 'y' });
         }
-    })
+    });
 
-    // закрыть
-    $('.close_panel', to_top_button).click(function(){
-        $.post('/json/settings/disable_scrollup/', { 'action': 'disable' }, function(json){
-            if(json.messages == 'ok'){
-                $('.to_top').remove()
-                $.jGrowl('Панель отключена. Вы можете настроить показ панели в <a href="/settings/others/">настройках</a>.', { sticky: true })
-            }else{
-                show_system_error(json)
+    // Закрытие панели
+    $('.close_panel', toTopButton).on('click', function (e) {
+        e.preventDefault();
+        $.post('/json/settings/disable_scrollup/', { action: 'disable' }, function (json) {
+            if (json.messages === 'ok') {
+                toTopButton.remove();
+                $.jGrowl(
+                    'Панель отключена. Вы можете настроить показ панели в <a href="/settings/others/">настройках</a>.',
+                    { sticky: true }
+                );
+            } else {
+                show_system_error(json);
             }
-        })
-        return false;
-    })
+        });
+    });
 
+    // Обработка скролла с оптимизацией
+    let scrollTimeout;
+    $(window).on('scroll', function () {
+        if (scrollTimeout) clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(() => {
+            handleScroll();
+        }, 50);
+    });
 
-    var last_position = 0;
+    function handleScroll() {
+        toggleButtonVisibility();
 
-    $(window).scroll(function () {
-        show_or_hide()
-        if( last_position < window.pageYOffset){
-            //console.log('скролл вниз', last_position , window.pageYOffset);
-            if( to_top_button.hasClass('has_position') ){
-                //to_top_button.removeClass('has_position');
-                //$('.to_top_button .arrow', to_top_button).html('&uarr;');
-                //$('.to_top_button .label', to_top_button).html('наверх');
-                //to_top_button.hide()
-                show = false
-            }
-        }else{
-            //console.log('скролл вверх', last_position , window.pageYOffset);
+        // Проверка направления скролла
+        if (lastScrollPosition < window.pageYOffset && toTopButton.hasClass('has_position')) {
+            showButton = false;
         }
-        last_position = window.pageYOffset;
-    })
+        lastScrollPosition = window.pageYOffset;
+    }
 
-
-    function show_or_hide(){
-        if( window.pageYOffset > 400){
-            if(!show){
-                to_top_button.show()
-                to_top_button.removeClass('has_position');
-                $('.to_top_button .arrow', to_top_button).html('&uarr;');
-                $('.to_top_button .label', to_top_button).html('наверх');
-                show = true
+    // Показ/скрытие кнопки
+    function toggleButtonVisibility() {
+        if (window.pageYOffset > 400) {
+            if (!showButton) {
+                toTopButton.fadeIn();
+                toTopButton.removeClass('has_position');
+                $arrow.html('&uarr;');
+                $label.text('наверх');
+                showButton = true;
             }
-        }else{
-            if(show && !to_top_button.hasClass('has_position')){
-                to_top_button.hide()
-                show = false
-            }
+        } else if (showButton && !toTopButton.hasClass('has_position')) {
+            toTopButton.fadeOut();
+            showButton = false;
         }
     }
 
-
-    show_or_hide()
-
+    // Инициализация
+    toggleButtonVisibility();
 });
