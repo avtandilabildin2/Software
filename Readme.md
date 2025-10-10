@@ -1,50 +1,45 @@
-# Project Update Report
+Author: Abildin Avtandil
 
-**Author:** Abildin Avtandil  
-**Project:** Computer Science Department Website  
-**Date:** 2025-10-08
+Team Members: Eldar Zharkynbaev, Baiymbet Nazarmatov, Aliyaan Ahmed
 
----
+Overview
 
-## Overview
+This project successfully delivered a redesigned and improved version of the Computer Science Department website. A core goal of this update was to consolidate all code: the entire site is now contained within a single HTML file for significantly easier maintenance and faster loading. The resulting site features a modern, responsive layout and leverages vanilla JavaScript for interactive elements like dropdown menus and a simple image slider.
 
-This project is a redesigned and improved version of the Computer Science Department website. All HTML, CSS, and JavaScript code have been consolidated into a single HTML file for easier maintenance and faster loading. The site now has a modern, responsive layout, and interactive elements like dropdown menus and a simple image slider.
+Key Changes & Improvements
 
----
+1. 📂 Code Consolidation and Structure
 
-## Changes Made
+   Single-File Solution: Successfully merged all separate HTML, CSS, and JavaScript files into a single, unified HTML file.
 
-1. **HTML Structure**
-    - Consolidated multiple HTML, CSS, and JS files into a single HTML file.
-    - Reorganized the header, navigation, main content, and footer sections for better readability.
-    - Replaced outdated tags and attributes with modern, semantic HTML5 elements (`<header>`, `<main>`, `<section>`, `<footer>`).
+   Semantic HTML5: Replaced outdated tags with modern, semantic elements (<header>, <main>, <section>, <footer>) to improve code readability and SEO.
 
-2. **CSS Improvements**
-    - Added internal CSS within the `<style>` tag for a single-file solution.
-    - Improved responsiveness using flexbox for layout and media queries for mobile devices.
-    - Styled navigation menu, dropdowns, slider, and content sections with modern colors, shadows, and rounded corners.
-    - Removed redundant and outdated classes (like `container_16`, `grid_8`) to simplify layout.
+   Simplification: Reorganized the page structure (header, navigation, main content, footer) for better maintainability.
 
-3. **JavaScript Enhancements**
-    - Replaced jQuery-based slider with a simple vanilla JS slider for images.
-    - Added toggle functionality for dropdown menus without relying on external libraries.
-    - Ensured smooth and automated slide transitions every 5 seconds.
-    - Removed unnecessary external JS dependencies (like `nivo-slider` and `highlight.js`).
+2. 🎨 CSS and Layout Enhancements
 
-4. **Content Updates**
-    - Updated main content with headings, paragraphs, and buttons for clarity.
-    - Organized mission, vision, and merits sections into clean, card-like boxes.
-    - Added `alt` attributes for all images to improve accessibility.
+   Internal Styling: Implemented all CSS internally within the <style> tag, supporting the single-file goal.
 
-5. **Miscellaneous**
-    - Added meta description and viewport for better SEO and mobile support.
-    - Improved link accessibility by adding `rel="noopener noreferrer"` to external links.
-    - Modernized footer and overall page aesthetics.
+   Modern Responsiveness: Improved layout using flexbox and targeted media queries to ensure a flawless experience on mobile devices.
 
----
+   Aesthetics: Applied a modern visual theme with contemporary colors, shadows, and rounded corners for navigation, dropdowns, and content sections.
 
-## Summary
+   Layout Cleanup: Removed redundant and outdated layout classes (e.g., container_16, grid_8).
 
-The updated version is more **modern, lightweight, responsive, and maintainable**. All functionality is now contained in a single HTML file, making it easier to deploy and update.
+3. ✨ JavaScript Functionality
 
-**Author:** Abildin Avtandil
+   Vanilla JS Implementation: Replaced all external JavaScript dependencies (like jQuery and nivo-slider) with simple, native JavaScript code.
+
+   Interactive Elements: Developed toggle functionality for dropdown menus and a lightweight image slider for smooth, automated transitions every 5 seconds.
+
+4. ✅ Content & Accessibility
+
+   Accessibility Focus: Added required alt attributes to all images and implemented rel="noopener noreferrer" for external links to improve user security and accessibility.
+
+   Clarity: Organized main content sections (Mission, Vision, Merits) into clean, visually appealing card-like boxes.
+
+   SEO Optimization: Included crucial meta description and viewport settings for better search engine and mobile device support.
+
+Summary
+
+The updated website is a significant step forward, delivering a product that is demonstrably more modern, lightweight, responsive, and maintainable. The single-file architecture simplifies deployment and future updates, making the project highly successful.
